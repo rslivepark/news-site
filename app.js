@@ -3,10 +3,9 @@ let newsList = [];
 const menus = document.querySelectorAll('.menus button');
 const searchInput = document.getElementById('search-input');
 
-// 환경변수에서 API URL 가져오기
-const apiUrl = process.env.REACT_APP_API_URL || 'http://default-api-url.com/top-headlines';
-
-let url = new URL(apiUrl);
+let url = new URL(
+  `https://comforting-torrone-5df868.netlify.app/top-headlines`
+);
 
 // 카테고리 버튼 클릭 이벤트
 menus.forEach((menu) =>
@@ -51,7 +50,7 @@ const getNews = async () => {
 
 // 최신 뉴스 가져오기
 const getLatestNews = async () => {
-  url = new URL(apiUrl);
+  url = new URL(`https://comforting-torrone-5df868.netlify.app/top-headlines`);
   getNews();
 };
 
@@ -159,7 +158,9 @@ window.addEventListener('resize', toggleMenuDisplay);
 // 카테고리별 뉴스 가져오기
 const getNewsByCategory = async (event) => {
   const category = event.target.textContent.toLowerCase();
-  url = new URL(`${apiUrl}?category=${category}`);
+  url = new URL(
+    `https://comforting-torrone-5df868.netlify.app/top-headlines?category=${category}`
+  );
   isCategoryView = true;
   await getNews();
   toggleMenuDisplay();
@@ -168,7 +169,9 @@ const getNewsByCategory = async (event) => {
 // 키워드로 뉴스 검색
 const getNewsByKeyword = async () => {
   const keyword = searchInput.value;
-  url = new URL(`${apiUrl}?q=${keyword}`);
+  url = new URL(
+    `https://comforting-torrone-5df868.netlify.app/top-headlines?q=${keyword}`
+  );
 
   if (keyword === '') {
     alert('검색어를 입력해주세요');
