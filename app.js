@@ -4,7 +4,7 @@ const menus = document.querySelectorAll('.menus button');
 const searchInput = document.getElementById('search-input');
 
 // 환경변수에서 API URL 가져오기
-const apiUrl = process.env.API_URL || 'http://default-api-url.com/top-headlines';
+const apiUrl = process.env.REACT_APP_API_URL || 'http://default-api-url.com/top-headlines';
 
 let url = new URL(apiUrl);
 
