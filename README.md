@@ -3,8 +3,7 @@
 - 현재 다른나라에서 어떤 일이 일어나고 있는지 궁금하다면?!
 
 ### 미리보기
-
-- https://gorgeous-hamster-de6bab.netlify.app
+- https://comforting-torrone-5df868.netlify.app  
 
 ### 구현기능
 
