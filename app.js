@@ -3,9 +3,10 @@ let newsList = [];
 const menus = document.querySelectorAll('.menus button');
 const searchInput = document.getElementById('search-input');
 
-let url = new URL(
-  `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines`
-);
+// 환경변수에서 API URL 가져오기
+const apiUrl = process.env.API_URL || 'http://default-api-url.com/top-headlines';
+
+let url = new URL(apiUrl);
 
 // 카테고리 버튼 클릭 이벤트
 menus.forEach((menu) =>
@@ -50,9 +51,7 @@ const getNews = async () => {
 
 // 최신 뉴스 가져오기
 const getLatestNews = async () => {
-  url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines`
-  );
+  url = new URL(apiUrl);
   getNews();
 };
 
@@ -160,9 +159,7 @@ window.addEventListener('resize', toggleMenuDisplay);
 // 카테고리별 뉴스 가져오기
 const getNewsByCategory = async (event) => {
   const category = event.target.textContent.toLowerCase();
-  url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?category=${category}`
-  );
+  url = new URL(`${apiUrl}?category=${category}`);
   isCategoryView = true;
   await getNews();
   toggleMenuDisplay();
@@ -171,9 +168,7 @@ const getNewsByCategory = async (event) => {
 // 키워드로 뉴스 검색
 const getNewsByKeyword = async () => {
   const keyword = searchInput.value;
-  url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?q=${keyword}`
-  );
+  url = new URL(`${apiUrl}?q=${keyword}`);
 
   if (keyword === '') {
     alert('검색어를 입력해주세요');
