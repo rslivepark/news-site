@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News-API</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      defer
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body">
+    <section class="container">
+      <!-- 사이드 버튼 -->
+      <div class="modeToggle" title="다크모드">
+        <button id="modeToggle"><i class="fa-solid fa-moon"></i></button>
+      </div>
+      <div class="top" title="화면 상단">
+        <button><i class="fa-solid fa-angles-up"></i></button>
+      </div>
+      <div class="bottom" title="화면 하단">
+        <button><i class="fa-solid fa-angles-down"></i></button>
+      </div>
+      <!-- 헤드라인 섹션 -->
+      <section id="head-line">
+        <div class="head-line">
+          <a href="index.html" title="메인화면으로 가기">News Site</a>
+        </div>
+
+        <!-- 검색 폼 -->
+        <div class="search">
+          <form id="search-form">
+            <div class="input-group mb-3 col-12 col-sm-12 col-md-6 col-lg-6">
+              <input
+                type="text"
+                class="search-input"
+                id="search-input"
+                placeholder="Search"
+                aria-describedby="basic-addon2"
+              />
+              <button class="search-button" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 메뉴 -->
+        <div class="menus">
+          <button>business</button>
+          <button>entertainment</button>
+          <button>general</button>
+          <button>health</button>
+          <button>science</button>
+          <button>sports</button>
+          <button>technology</button>
+        </div>
+
+        <div class="menu-bars">
+          <button class="bars-button" type="button">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- 뉴스 보드 섹션 -->
+      <section id="news-board" class="container content"></section>
+
+      <!-- 페이지 네비게이션 -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination"></ul>
+      </nav>
+    </section>
+  </body>
+</html>
